@@ -1,0 +1,401 @@
+<title>Odonto Guaratuba</title>
+<meta name="description" content="Odonto Guaratuba: implantes, próteses e protocolo em Guaratuba/PR. Estética e reabilitação oral personalizada.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Manrope:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: split hero with a gold "smile" arc, pulled from the logo; alternating light sections; one deep-plum band for the protocol steps */
+:root{
+  --bg:#FAF8FC; --surface:#FFFFFF; --ink:#1D1128; --muted:#64577A; --line:#E7DFEF;
+  --plum:#4A1C6B; --plum-ink:#4A1C6B; --band:#2D0F44; --band-ink:#F4EEFA; --band-muted:#C9B8DA;
+  --gold:#E8B423; --gold-soft:#FBF1D3; --tint:#F1EAF7; --wa:#1F9D55;
+  --display:"Bricolage Grotesque", "Trebuchet MS", system-ui, sans-serif;
+  --body:"Manrope", "Segoe UI", system-ui, sans-serif;
+  --r:18px; --max:1160px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#130A1B; --surface:#1C1127; --ink:#F2ECF8; --muted:#B0A2C2; --line:#33243F;
+  --plum:#6B2E96; --plum-ink:#C9A2E8; --band:#22102F; --band-ink:#F4EEFA; --band-muted:#BBA8CF;
+  --gold:#F0C23F; --gold-soft:#3A2D12; --tint:#241533; --wa:#27B463; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#130A1B; --surface:#1C1127; --ink:#F2ECF8; --muted:#B0A2C2; --line:#33243F;
+  --plum:#6B2E96; --plum-ink:#C9A2E8; --band:#22102F; --band-ink:#F4EEFA; --band-muted:#BBA8CF;
+  --gold:#F0C23F; --gold-soft:#3A2D12; --tint:#241533; --wa:#27B463; color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);line-height:1.08;letter-spacing:-.02em;margin:0;text-wrap:balance}
+p{margin:0}
+.wrap{max-width:var(--max);margin-inline:auto;padding-inline:clamp(16px,4vw,32px)}
+section{padding-block:clamp(64px,9vw,112px)}
+.eyebrow{display:inline-block;font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--plum-ink);background:var(--tint);padding:7px 14px;border-radius:99px}
+.lead{color:var(--muted);font-size:clamp(17px,1.6vw,19px);max-width:60ch}
+.sec-head{display:grid;gap:18px;margin-bottom:48px;max-width:760px}
+.sec-head h2{font-size:clamp(32px,4.4vw,52px)}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:6px}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:16px;text-decoration:none;padding:15px 26px;border-radius:99px;transition:transform .2s,box-shadow .2s,background .2s}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-primary{background:var(--plum);color:#fff;box-shadow:0 10px 28px -12px var(--plum)}
+.btn-primary:hover{transform:translateY(-2px)}
+.btn-ghost{border:1.5px solid var(--line);color:var(--ink)}
+.btn-ghost:hover{border-color:var(--plum-ink)}
+
+/* header */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-block:14px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo-mark{width:42px;height:42px;border-radius:50%;background:var(--plum);display:grid;place-items:center;flex:none}
+.logo-text{display:grid;line-height:1}
+.logo-text small{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.logo-text strong{font-family:var(--display);font-size:21px;font-weight:800;letter-spacing:-.02em}
+.nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0;font-size:15px;font-weight:600}
+.nav ul a{text-decoration:none;color:var(--muted)}
+.nav ul a:hover{color:var(--ink)}
+.nav .btn{padding:11px 20px;font-size:14.5px}
+@media (max-width:900px){.nav ul{display:none}}
+@media (max-width:460px){.nav .btn span{display:none}.nav .btn{padding:11px}}
+
+/* hero */
+.hero{padding-block:clamp(48px,7vw,96px) clamp(56px,8vw,104px)}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(32px,5vw,72px);align-items:center}
+.hero-copy{display:grid;gap:26px;min-width:0}
+.hero h1{font-size:clamp(40px,6.2vw,76px);font-weight:800}
+.smile{position:relative;color:var(--plum-ink);white-space:nowrap}
+.smile svg{position:absolute;left:-2%;bottom:-.28em;width:104%;height:.42em;overflow:visible}
+.smile path{fill:none;stroke:var(--gold);stroke-width:9;stroke-linecap:round;stroke-dasharray:420;stroke-dashoffset:0;animation:draw 1.1s .3s ease-out backwards}
+@keyframes draw{from{stroke-dashoffset:420}}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:12px}
+.loc{display:flex;align-items:center;gap:8px;color:var(--muted);font-weight:600;font-size:15px}
+.loc svg{width:18px;height:18px;color:var(--gold)}
+
+.hero-card{background:var(--band);color:var(--band-ink);border-radius:28px;padding:clamp(28px,3.4vw,40px);display:grid;gap:24px;position:relative;overflow:hidden}
+.hero-card::after{content:"";position:absolute;right:-70px;top:-70px;width:220px;height:220px;border-radius:50%;border:26px solid var(--gold);opacity:.16}
+.hero-card .tag{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--gold)}
+.hero-card h2{font-size:clamp(26px,2.6vw,32px)}
+.pay{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.pay div{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:16px 16px 14px}
+.pay b{display:block;font-family:var(--display);font-size:clamp(34px,3.6vw,44px);line-height:1;color:var(--gold);font-variant-numeric:tabular-nums}
+.pay span{font-size:13.5px;color:var(--band-muted)}
+.hero-card ul{list-style:none;margin:0;padding:0;display:grid;gap:10px;font-size:15.5px}
+.hero-card li{display:flex;gap:10px;align-items:flex-start}
+.hero-card li svg{width:20px;height:20px;flex:none;color:var(--gold);margin-top:3px}
+.fine{font-size:12px;color:var(--band-muted)}
+@media (max-width:900px){.hero-grid{grid-template-columns:1fr}}
+
+/* specialties strip */
+.strip{border-block:1px solid var(--line);background:var(--surface);padding-block:22px}
+.strip ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px 28px;font-family:var(--display);font-weight:700;font-size:clamp(17px,2vw,22px)}
+.strip li{display:flex;align-items:center;gap:12px}
+.strip li::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--gold)}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,80px);align-items:start}
+.about-grid .big{font-family:var(--display);font-size:clamp(28px,3.4vw,42px);line-height:1.15;font-weight:700;letter-spacing:-.02em;text-wrap:balance}
+.about-grid .big em{font-style:normal;color:var(--plum-ink)}
+.about-body{display:grid;gap:20px;color:var(--muted)}
+.rt{display:flex;gap:16px;align-items:center;padding:18px 20px;border:1px solid var(--line);border-radius:var(--r);background:var(--surface);color:var(--ink)}
+.rt .ava{width:52px;height:52px;border-radius:50%;background:var(--tint);color:var(--plum-ink);display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:19px;flex:none}
+.rt small{display:block;color:var(--muted);font-size:13.5px}
+@media (max-width:800px){.about-grid{grid-template-columns:1fr}}
+
+/* treatments */
+.treat{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.t-card{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:30px 28px;display:grid;grid-template-rows:auto auto 1fr auto;gap:14px;min-width:0}
+.t-card .ico{width:56px;height:56px;border-radius:16px;background:var(--tint);color:var(--plum-ink);display:grid;place-items:center}
+.t-card .ico svg{width:30px;height:30px}
+.t-card h3{font-size:25px}
+.t-card p{color:var(--muted);font-size:16px}
+.t-card a{font-weight:700;font-size:15px;color:var(--plum-ink);text-decoration:none;display:inline-flex;gap:6px;align-items:center}
+.t-card a:hover{text-decoration:underline;text-underline-offset:4px}
+.t-card.feature{background:var(--gold-soft);border-color:transparent}
+.also{margin-top:28px;display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.also strong{margin-right:6px;font-size:15px}
+.chip{font-size:14.5px;font-weight:600;padding:8px 16px;border:1px solid var(--line);border-radius:99px;background:var(--surface)}
+@media (max-width:900px){.treat{grid-template-columns:1fr}}
+
+/* protocol band */
+.band{background:var(--band);color:var(--band-ink)}
+.band .eyebrow{background:rgba(255,255,255,.1);color:var(--gold)}
+.band .lead{color:var(--band-muted)}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:0;counter-reset:s;border-top:1px solid rgba(255,255,255,.16)}
+.steps li{padding:28px 24px 8px 0;display:grid;gap:10px;counter-increment:s;min-width:0}
+.steps li::before{content:"Etapa " counter(s);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--gold)}
+.steps h3{font-size:22px}
+.steps p{color:var(--band-muted);font-size:15.5px}
+@media (max-width:900px){.steps{grid-template-columns:1fr 1fr;row-gap:8px}}
+@media (max-width:520px){.steps{grid-template-columns:1fr}}
+.band-cta{margin-top:44px;display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+.band-cta .btn-primary{background:var(--gold);color:#2D0F44;box-shadow:none}
+
+/* diferenciais */
+.diff{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+.diff div{display:grid;gap:10px;align-content:start;padding-top:22px;border-top:2px solid var(--ink)}
+.diff h3{font-size:20px}
+.diff p{color:var(--muted);font-size:15.5px}
+@media (max-width:900px){.diff{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.diff{grid-template-columns:1fr}}
+
+/* social proof */
+.proof{background:var(--tint);border-radius:28px;padding:clamp(28px,5vw,56px);display:grid;grid-template-columns:1.2fr .8fr;gap:32px;align-items:center}
+.proof h2{font-size:clamp(28px,3.6vw,42px)}
+.proof p{color:var(--muted);margin-top:14px}
+.hl{display:flex;flex-wrap:wrap;gap:10px;justify-content:flex-end}
+.hl a{display:grid;place-items:center;width:92px;height:92px;border-radius:50%;background:var(--surface);border:2px solid var(--gold);text-decoration:none;font-size:12.5px;font-weight:700;text-align:center;line-height:1.2;padding:8px;transition:transform .2s}
+.hl a:hover{transform:scale(1.05)}
+@media (max-width:800px){.proof{grid-template-columns:1fr}.hl{justify-content:flex-start}}
+
+/* faq */
+.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(32px,6vw,80px)}
+.faq{display:grid}
+details{border-bottom:1px solid var(--line)}
+details:first-child{border-top:1px solid var(--line)}
+summary{cursor:pointer;list-style:none;padding:22px 0;display:flex;justify-content:space-between;gap:20px;font-weight:700;font-size:18px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:var(--display);font-size:26px;line-height:1;color:var(--plum-ink);transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{padding-bottom:22px;color:var(--muted);max-width:62ch}
+@media (max-width:800px){.faq-grid{grid-template-columns:1fr}}
+
+/* contact */
+.contact{display:grid;grid-template-columns:1.1fr .9fr;gap:24px}
+.c-main{background:var(--plum);color:#fff;border-radius:28px;padding:clamp(28px,5vw,56px);display:grid;gap:22px;align-content:start}
+.c-main h2{font-size:clamp(32px,4.4vw,52px)}
+.c-main p{color:rgba(255,255,255,.8);max-width:46ch}
+.c-main .btn{background:#fff;color:var(--band);justify-self:start}
+.c-info{border:1px solid var(--line);background:var(--surface);border-radius:28px;padding:clamp(24px,4vw,40px);display:grid;gap:22px;align-content:start}
+.c-info dt{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--muted)}
+.c-info dd{margin:4px 0 0;font-weight:600;font-size:17px}
+.c-info dl{margin:0;display:grid;gap:20px}
+.copy{border:0;background:var(--tint);color:var(--plum-ink);font:inherit;font-size:13px;font-weight:700;padding:4px 10px;border-radius:99px;cursor:pointer;margin-left:8px}
+@media (max-width:800px){.contact{grid-template-columns:1fr}}
+
+footer{border-top:1px solid var(--line);padding-block:32px;font-size:14px;color:var(--muted)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+
+.wa-float{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:30;width:60px;height:60px;border-radius:50%;background:var(--wa);color:#fff;display:grid;place-items:center;box-shadow:0 12px 30px -8px rgba(0,0,0,.4);transition:transform .2s}
+.wa-float:hover{transform:scale(1.07)}
+.wa-float svg{width:30px;height:30px}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2a9.9 9.9 0 0 0-8.5 14.98L2 22l5.16-1.5A9.9 9.9 0 1 0 12.04 2Zm0 18.1c-1.5 0-2.97-.4-4.25-1.16l-.3-.18-3.06.89.9-2.98-.2-.31a8.2 8.2 0 1 1 6.91 3.74Zm4.5-6.14c-.25-.12-1.46-.72-1.69-.8-.23-.08-.39-.12-.55.12-.16.25-.63.8-.78.97-.14.16-.29.18-.53.06a6.7 6.7 0 0 1-3.34-2.92c-.25-.43.25-.4.72-1.34.08-.16.04-.3-.02-.42-.06-.12-.55-1.33-.76-1.82-.2-.48-.4-.41-.55-.42h-.47a.9.9 0 0 0-.65.3 2.74 2.74 0 0 0-.86 2.04c0 1.2.88 2.37 1 2.53.12.16 1.73 2.64 4.19 3.7 1.56.67 2.17.73 2.95.61.47-.07 1.46-.6 1.66-1.17.2-.58.2-1.07.14-1.17-.06-.1-.22-.16-.46-.28Z"/></symbol>
+  <symbol id="check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+  <symbol id="pin" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></symbol>
+  <symbol id="tooth" viewBox="0 0 32 32"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M16 7.5c-2.2-1.6-4.3-2.3-6.6-1.8C6 6.4 4.6 9.7 5.4 13.2c.6 2.6 1.9 4.4 2.5 7.2.6 2.9 1 6.1 2.9 6.1 2.3 0 2-5.6 5.2-5.6s2.9 5.6 5.2 5.6c1.9 0 2.3-3.2 2.9-6.1.6-2.8 1.9-4.6 2.5-7.2.8-3.5-.6-6.8-4-7.5-2.3-.5-4.4.2-6.6 1.8Z"/></symbol>
+  <symbol id="implant" viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 9.5c0-3 2.7-5 6-5s6 2 6 5c0 1.6-.7 2.5-1.5 3h-9c-.8-.5-1.5-1.4-1.5-3Z"/><path d="M12 15.5h8M12.5 18.5h7M13 21.5h6M13.5 24.5h5M15 27.5h2"/></g></symbol>
+  <symbol id="arch" viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 22c0-8 5-15 11-15s11 7 11 15"/><path d="M5 22h22"/><path d="M9 22v4M16 22v4M23 22v4"/><circle cx="9" cy="14.5" r="1.3"/><circle cx="16" cy="10.5" r="1.3"/><circle cx="23" cy="14.5" r="1.3"/></g></symbol>
+</svg>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#inicio" aria-label="Odonto Guaratuba, início">
+      <span class="logo-mark"><svg width="26" height="14" viewBox="0 0 26 14" aria-hidden="true"><path d="M2 3c3 6 7 8.5 11 8.5S21 9 24 3" fill="none" stroke="#E8B423" stroke-width="3.2" stroke-linecap="round"/></svg></span>
+      <span class="logo-text"><small>Odonto</small><strong>Guaratuba</strong></span>
+    </a>
+    <ul>
+      <li><a href="#tratamentos">Tratamentos</a></li>
+      <li><a href="#protocolo">Protocolo</a></li>
+      <li><a href="#clinica">A clínica</a></li>
+      <li><a href="#duvidas">Dúvidas</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+    <a class="btn btn-primary" href="https://wa.me/5541995970868?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener"><svg><use href="#wa"/></svg><span>Agendar avaliação</span></a>
+  </div>
+</header>
+
+<main id="inicio">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">Implantes · Próteses · Protocolo</span>
+        <h1>Dentes fixos e um novo <span class="smile">sorriso<svg viewBox="0 0 200 30" preserveAspectRatio="none" aria-hidden="true"><path d="M6 6 C60 30 140 30 194 6"/></svg></span>, planejados para você.</h1>
+        <p class="lead">Estética e reabilitação oral personalizada em Guaratuba. Da primeira avaliação à prótese final, você é acompanhado pelo mesmo time, com um plano feito para o seu caso.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="https://wa.me/5541995970868?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Agendar pelo WhatsApp</a>
+          <a class="btn btn-ghost" href="#tratamentos">Ver tratamentos</a>
+        </div>
+        <span class="loc"><svg><use href="#pin"/></svg>Guaratuba · Litoral do Paraná</span>
+      </div>
+
+      <aside class="hero-card" aria-label="Condições de pagamento">
+        <span class="tag">Pagamento facilitado</span>
+        <h2>Seu tratamento cabe no seu planejamento.</h2>
+        <div class="pay">
+          <div><b>40%</b><span>de desconto no pagamento à vista</span></div>
+          <div><b>36x</b><span>parcelamento no boleto</span></div>
+        </div>
+        <ul>
+          <li><svg><use href="#check"/></svg>Avaliação com plano de tratamento por escrito</li>
+          <li><svg><use href="#check"/></svg>Orçamento claro, sem surpresas no meio do caminho</li>
+        </ul>
+        <p class="fine">Condições sujeitas a análise. Consulte pelo WhatsApp.</p>
+      </aside>
+    </div>
+  </section>
+
+  <div class="strip">
+    <ul class="wrap" aria-label="Especialidades">
+      <li>Implantes dentários</li><li>Protocolo</li><li>Próteses</li><li>Clareamento</li><li>Ortodontia</li>
+    </ul>
+  </div>
+
+  <section id="clinica">
+    <div class="wrap about-grid">
+      <div style="display:grid;gap:22px">
+        <span class="eyebrow" style="justify-self:start">A Odonto Guaratuba</span>
+        <p class="big">Perder dentes muda como você come, fala e sorri. <em>Nosso trabalho é devolver tudo isso</em> com segurança.</p>
+      </div>
+      <div class="about-body">
+        <p>A Odonto Guaratuba é focada em reabilitação oral: implantes, próteses e protocolos para quem perdeu um, vários ou todos os dentes. Também cuidamos da estética do sorriso, com clareamento e ortodontia.</p>
+        <p>Cada tratamento começa com uma avaliação completa e um planejamento individual. Você entende o que será feito, em quantas etapas e quanto vai investir antes de começar.</p>
+        <div class="rt">
+          <span class="ava" aria-hidden="true">RF</span>
+          <div><strong>Dr. Rafael Fidêncio</strong><small>Responsável técnico · CRO-PR 3xxxx</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="tratamentos" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow" style="justify-self:start">Tratamentos</span>
+        <h2>Soluções para voltar a mastigar e sorrir sem medo</h2>
+        <p class="lead">Nossos três pilares cobrem desde a perda de um único dente até a reabilitação completa da boca.</p>
+      </div>
+      <div class="treat">
+        <article class="t-card">
+          <span class="ico"><svg><use href="#implant"/></svg></span>
+          <h3>Implantes dentários</h3>
+          <p>Um pino de titânio substitui a raiz do dente perdido e recebe uma coroa com aparência natural. Firme, sem precisar desgastar os dentes vizinhos.</p>
+          <a href="https://wa.me/5541995970868?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20implantes." target="_blank" rel="noopener">Saber mais →</a>
+        </article>
+        <article class="t-card feature">
+          <span class="ico"><svg><use href="#arch"/></svg></span>
+          <h3>Protocolo</h3>
+          <p>Para quem perdeu todos os dentes de uma arcada ou usa dentadura: uma prótese fixa parafusada sobre implantes. Não sai da boca e devolve a mastigação.</p>
+          <a href="#protocolo">Como funciona →</a>
+        </article>
+        <article class="t-card">
+          <span class="ico"><svg><use href="#tooth"/></svg></span>
+          <h3>Próteses</h3>
+          <p>Coroas, pontes e próteses fixas ou removíveis, feitas sob medida para recuperar a função e a harmonia do sorriso.</p>
+          <a href="https://wa.me/5541995970868?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20pr%C3%B3teses." target="_blank" rel="noopener">Saber mais →</a>
+        </article>
+      </div>
+      <div class="also">
+        <strong>Também atendemos:</strong>
+        <span class="chip">Clareamento dental</span><span class="chip">Ortodontia</span><span class="chip">Estética do sorriso</span><span class="chip">Clínica geral</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="protocolo" class="band">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow" style="justify-self:start">Protocolo passo a passo</span>
+        <h2>Da dentadura aos dentes fixos</h2>
+        <p class="lead">O protocolo é o tratamento mais procurado da clínica. Veja como é a jornada. Prazos variam conforme o caso e são definidos na avaliação.</p>
+      </div>
+      <ol class="steps">
+        <li><h3>Avaliação</h3><p>Consulta, exame clínico e exames de imagem para entender a quantidade e a qualidade do osso.</p></li>
+        <li><h3>Planejamento</h3><p>Definimos quantos implantes, o tipo de prótese e o cronograma. Você recebe o orçamento completo.</p></li>
+        <li><h3>Implantes</h3><p>Cirurgia com anestesia local para instalar os implantes que vão sustentar a nova arcada.</p></li>
+        <li><h3>Prótese fixa</h3><p>A prótese é parafusada sobre os implantes. Depois, fazemos o acompanhamento e as manutenções.</p></li>
+      </ol>
+      <div class="band-cta">
+        <a class="btn btn-primary" href="https://wa.me/5541995970868?text=Ol%C3%A1!%20Quero%20avaliar%20meu%20caso%20para%20protocolo." target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Avaliar meu caso</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow" style="justify-self:start">Por que a Odonto Guaratuba</span>
+        <h2>O que você encontra aqui</h2>
+      </div>
+      <div class="diff">
+        <div><h3>Plano personalizado</h3><p>Nenhum sorriso é igual. O tratamento é desenhado para a sua boca, sua rotina e seu orçamento.</p></div>
+        <div><h3>Foco em reabilitação</h3><p>Implantes, próteses e protocolo são o dia a dia da clínica, não um serviço a mais.</p></div>
+        <div><h3>Transparência</h3><p>Você sabe cada etapa, o prazo estimado e o valor antes de começar.</p></div>
+        <div><h3>Pagamento facilitado</h3><p>Desconto à vista e parcelamento no boleto para o tratamento sair do papel.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="proof">
+        <div>
+          <span class="eyebrow">Sorrisos reais</span>
+          <h2 style="margin-top:16px">Veja resultados e depoimentos de pacientes</h2>
+          <p>Nos destaques do nosso Instagram você acompanha casos reais, depoimentos e um tour pela clínica.</p>
+        </div>
+        <nav class="hl" aria-label="Destaques do Instagram">
+          <a href="https://www.instagram.com/odontoguaratuba_/" target="_blank" rel="noopener">Depoi&shy;mentos</a>
+          <a href="https://www.instagram.com/odontoguaratuba_/" target="_blank" rel="noopener">Sorrisos reais</a>
+          <a href="https://www.instagram.com/odontoguaratuba_/" target="_blank" rel="noopener">Tour pela clínica</a>
+        </nav>
+      </div>
+    </div>
+  </section>
+
+  <section id="duvidas" style="padding-top:0">
+    <div class="wrap faq-grid">
+      <div class="sec-head" style="margin:0;align-content:start">
+        <span class="eyebrow" style="justify-self:start">Dúvidas frequentes</span>
+        <h2>Perguntas que ouvimos todo dia</h2>
+        <p class="lead">Não achou a sua? Mande no WhatsApp.</p>
+      </div>
+      <div class="faq">
+        <details open><summary>Colocar implante dói?</summary><p>A cirurgia é feita com anestesia local, então você não sente dor durante o procedimento. Nos dias seguintes pode haver algum desconforto, controlado com a medicação indicada pelo dentista.</p></details>
+        <details><summary>Qual a diferença entre protocolo e dentadura?</summary><p>A dentadura é removível e se apoia na gengiva. O protocolo é fixo: fica parafusado sobre implantes, não sai da boca e dá muito mais firmeza para mastigar e falar.</p></details>
+        <details><summary>Quanto tempo leva o tratamento?</summary><p>Depende do caso, da quantidade de osso e da técnica indicada. Na avaliação você recebe o cronograma completo, etapa por etapa.</p></details>
+        <details><summary>Quanto dura um implante?</summary><p>Com boa higiene e consultas de manutenção, o implante pode durar muitos anos. A prótese sobre ele pode precisar de ajustes ao longo do tempo.</p></details>
+        <details><summary>Quais são as formas de pagamento?</summary><p>Oferecemos desconto para pagamento à vista e parcelamento no boleto. Consulte as condições atuais pelo WhatsApp.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato" style="padding-top:0">
+    <div class="wrap contact">
+      <div class="c-main">
+        <h2>Agende sua avaliação</h2>
+        <p>Fale com a nossa equipe pelo WhatsApp, tire suas dúvidas e marque o melhor horário para você.</p>
+        <a class="btn" href="https://wa.me/5541995970868?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Chamar no WhatsApp</a>
+      </div>
+      <div class="c-info">
+        <dl>
+          <div><dt>WhatsApp</dt><dd><span id="fone">(41) 99597-0868</span><button class="copy" type="button" id="copy-fone">Copiar</button></dd></div>
+          <div><dt>Endereço</dt><dd>Rua [endereço], nº — Guaratuba, PR</dd></div>
+          <div><dt>Horário</dt><dd>Segunda a sexta, [horário]</dd></div>
+          <div><dt>Instagram</dt><dd><a href="https://www.instagram.com/odontoguaratuba_/" target="_blank" rel="noopener">@odontoguaratuba_</a></dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Odonto Guaratuba · Guaratuba, PR</span>
+    <span>Responsável técnico: Dr. Rafael Fidêncio · CRO-PR 3xxxx</span>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/5541995970868?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><svg><use href="#wa"/></svg></a>
+
+<script>
+document.getElementById('copy-fone').addEventListener('click', function(){
+  var b=this, t=document.getElementById('fone').textContent;
+  var done=function(){b.textContent='Copiado';setTimeout(function(){b.textContent='Copiar'},1600)};
+  try{navigator.clipboard.writeText(t).then(done,function(){sel()})}catch(e){sel()}
+  function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById('fone'));var s=getSelection();s.removeAllRanges();s.addRange(r)}
+});
+</script>
